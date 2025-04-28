@@ -4,8 +4,10 @@ import nltk
 from string import punctuation
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
+import flask_cors
 
 app = Flask(__name__)
+flask_cors.CORS(app)
 
 ps = PorterStemmer()
 
@@ -49,8 +51,8 @@ def get_prediction():
     prediction = logreg.predict(tranformed)
     print(prediction)
     print(type(prediction))
-    prediction = int(prediction[0])
-    return jsonify({"prediction": prediction})
+    isSpam = True if prediction[0] == 1 else False
+    return jsonify({"isSpam": isSpam})
 
 
 if __name__ == "__main__":
