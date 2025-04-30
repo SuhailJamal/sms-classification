@@ -29,7 +29,7 @@ const App: React.FC = () => {
     
     try {
       // Replace with your actual backend URL
-      const backendUrl = 'http://127.0.0.1:5001/predict';
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
       
       // This is a mock response for demonstration
       // In a real application, you would uncomment the fetch code below
