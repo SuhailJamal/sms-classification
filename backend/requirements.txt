@@ -2,3 +2,5 @@ flask
 flask-cors
 nltk
 scikit-learn
+nltk
+
