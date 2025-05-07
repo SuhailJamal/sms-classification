@@ -7,8 +7,13 @@ from nltk.stem.porter import PorterStemmer
 import flask_cors
 
 app = Flask(__name__)
-flask_cors.CORS(app, supports_credentials=True)
 
+
+flask_cors.CORS(
+    app,
+    supports_credentials=True,
+    origins=["https://sms-classification-beige.vercel.app"],
+)
 ps = PorterStemmer()
 
 
